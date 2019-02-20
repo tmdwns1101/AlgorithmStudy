@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FE399515-9945-4644-ACE4-CDF278531384}</ProjectGuid>
+    <ProjectGuid>{6FE23602-51AA-4BAB-B12E-6A5D81D0E637}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Beakjoon_Brute_force_Search</RootNamespace>
+    <RootNamespace>Beakjoon_배열사용하기</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,19 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="10819.cpp" />
-    <ClCompile Include="10971.cpp" />
-    <ClCompile Include="10974.cpp" />
-    <ClCompile Include="1107.cpp" />
-    <ClCompile Include="1107_v2.cpp" />
-    <ClCompile Include="11723.cpp" />
-    <ClCompile Include="1476.cpp" />
-    <ClCompile Include="1697.cpp" />
-    <ClCompile Include="1759.cpp" />
-    <ClCompile Include="1963.cpp" />
-    <ClCompile Include="1987.cpp" />
-    <ClCompile Include="2251.cpp" />
-    <ClCompile Include="9019.cpp" />
+    <ClCompile Include="10039.cpp" />
+    <ClCompile Include="1152.cpp" />
+    <ClCompile Include="2577.cpp" />
+    <ClCompile Include="2920.cpp" />
+    <ClCompile Include="8958.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
