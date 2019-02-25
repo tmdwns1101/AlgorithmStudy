@@ -153,8 +153,13 @@
     <ClCompile Include="10871.cpp" />
     <ClCompile Include="1094.cpp" />
     <ClCompile Include="1120.cpp" />
+    <ClCompile Include="1461_v2.cpp" />
+    <ClCompile Include="1461_v1.cpp" />
     <ClCompile Include="1551.cpp" />
+    <ClCompile Include="1952.cpp" />
+    <ClCompile Include="1966.cpp" />
     <ClCompile Include="2164.cpp" />
+    <ClCompile Include="2238.cpp" />
     <ClCompile Include="2455.cpp" />
     <ClCompile Include="2490.cpp" />
     <ClCompile Include="5532.cpp" />
