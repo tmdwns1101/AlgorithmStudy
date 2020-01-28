@@ -25,7 +25,7 @@ void eratostenes(bool *prime) {
 	}
 	//------------------------------------
 }
-
+	
 int main() {
 
 	int n;
