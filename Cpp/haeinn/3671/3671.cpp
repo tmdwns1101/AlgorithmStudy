@@ -27,7 +27,6 @@ int main() {
             }
         }
     }
-
     cin >> c;
 
     for(int i = 0; i <c; i++) {
@@ -62,6 +61,7 @@ int makePermutation(vector<int>& exCase) {
         for(int b = 0; b < i; b++) perm.emplace_back(1);
 
         do {
+            set.clear();
             // perm을 통해서 set을 생성해낸다
             for(int j = 0; j < _size; j++) {
                 if(perm[j] == 0) continue;
@@ -74,7 +74,7 @@ int makePermutation(vector<int>& exCase) {
                 bool checker = true;
 
                 for(int k = 0; k < (int)set.size(); k++) {
-                    num += set[k] * pow(10,k);
+                    num += (int) (set[k] * pow(10,k));
                 }
                 //소수 판별 함수
                 checker = primeNum(num, sum, numSet);
