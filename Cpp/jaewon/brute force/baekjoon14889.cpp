@@ -40,11 +40,11 @@ int main() {
 		
 		vector<int> start, link;
 		for (int i = 0; i < (int)v.size(); i++) {
-			// 0일때 스타트팀에 넣어줍니다.
+			// 0일때 스타트팀
 			if (v[i] == 0) {
 				start.push_back(i + 1);
 			}
-			// 1일때 링크팀에 넣어줍니다.
+			// 1일때 링크팀
 			else {
 				link.push_back(i + 1);
 			}

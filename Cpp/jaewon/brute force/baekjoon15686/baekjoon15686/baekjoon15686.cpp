@@ -77,6 +77,7 @@ int main() {
 				int c2 = chicken[j].second;
 				dist[i] = min(dist[i], abs(r1 - r2) + abs(c1 - c2));
 			}
+
 		}
 
 		int sum = 0;
