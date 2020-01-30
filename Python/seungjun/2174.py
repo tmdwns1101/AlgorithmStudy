@@ -90,6 +90,7 @@ def solution(board, target, action, count, row, col):
 # 방향 정의
 # 1 - N 2 - E 3 - S 4 - W 
 
+
 if __name__ == '__main__':
     col, row = list(map(int, input().rstrip().split()))
     n, m = list(map(int, input().rstrip().split()))
@@ -122,7 +123,6 @@ if __name__ == '__main__':
             print('Robot {0} crashes into robot {1}'.format(res['x'],res['y']))
             break
         else:
-
             continue
 
     if error_flag == True:

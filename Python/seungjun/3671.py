@@ -3,6 +3,7 @@ from itertools import combinations, permutations
 '''
 에라토스의 체를 이용한 소수 구하기
 '''
+
 MAX = 10000000
 
 primes = [True, True] +  [False for i in range(2,MAX)]
@@ -13,6 +14,7 @@ for i in range(2,MAX):
             primes[j] = True
 
 
+
 def solution(nums):
 
     ans = []
@@ -21,9 +23,8 @@ def solution(nums):
 
         for comb in nums_comb:
             for per in permutations(comb):
-                
                 bind_num = int("".join(list(per)))
-                print(bind_num)
+                #print(bind_num)
                 if primes[bind_num] == False:
                     ans.append(bind_num)
     

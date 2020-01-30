@@ -1,4 +1,3 @@
-
 global visited
 global percentages
 
