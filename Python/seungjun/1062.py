@@ -1,81 +1,74 @@
+import sys
 from itertools import combinations
 
+n, k = list(map(int, input().rstrip().split()))
 
-
-def solution(words, k):
-    if k < 5:
-        return 0
-    alpha = []
-    for i in range(98, 123):
-        if (
-            i != 110 
-            and i != 116
-            and i != 105
-            and i != 99
-        ):
-            alpha.append(chr(i))
-
-    alpha_comb = combinations(alpha, k-5)
+if k < 5:
+    print(0)
+elif k == 26:
+    print(n)
+else:
+    alpha = set('acnti')
+    check = set()
+    words = []
+    for i in range(n):
+        word = set(sys.stdin.readline()[:-1])
+        words.append(word) 
+        check = check.union(word)
+    
+    check = check - alpha
     ans = 0
-    
-    
-    for teach in alpha_comb:
-        
-        teach = list(teach) + ['a','c','n','t','i'] 
+
+    for teach in combinations(check, min(k-5, len(check))):
+        teach = set(teach).union(alpha)
         cnt = 0
-
         for word in words:
-            word = word[4:-4]
             
-            flag = True
-            for i in range(len(word)):
-                if teach.count(word[i]) == 0:
-                    flag = False
-                    break 
-            if flag == True:
+            if word.issubset(teach):
                 cnt += 1
-            
         ans = cnt if cnt > ans else ans 
-     
-    return ans
-
-if __name__ == '__main__':
-    n, k = list(map(int, input().rstrip().split()))
-    words = [input() for _ in range(n)]
-    
-    res = solution(words, k)
-    print(res)       
-
+    print(ans)
 
 '''
+
 global alphas
 global n, k
 global words
 
+ 
+
+ans = 0
+
 def solution(st, count):
-    if count == k:
+    global ans
+ 
+    if count == 0:
         weight = 0
-        for word in words:
+        
+        for i in range(n):
             flag = True
-            word = word[4:-4]
-            for i in range(len(word)):
-                if alphas[ord(word[i])-97] == False:
+            word = words[i][4:-4]
+            for j in range(len(word)):
+                if alphas[ord(word[j])-97] == False:
                     flag = False
                     break
             if flag == True:
                 weight += 1
-        return weight
+            if weight + n - i <= ans:
+                break
+        ans = weight if ans < weight else ans
+        #return weight
 
     else:
-        ans = 0
+        #ans = 0
+            
         for i in range(st,26):
             if alphas[i] == False:
                 alphas[i] = True 
-                res = solution(st,count-1)
-                ans = max(res, ans)
+                solution(i, count-1)
+                
                 alphas[i] = False
-
-        return ans
+        #return ans
 
 
 
@@ -94,6 +87,8 @@ if __name__ == '__main__':
     if k < 5:
         print(0)
     else:
-        res = solution(0,k-5)
-        print(res)
- '''   
+        #res = solution(0,k-5)
+        solution(0,k-5)
+        print(ans)
+
+'''
