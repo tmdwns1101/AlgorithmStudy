@@ -16,7 +16,6 @@ for i in range(n):
         if j >= n:
             j = j - n
         val *= cows[j]
-        
         indexing[j].append(i) 
     
     rooms_val.append(val)
