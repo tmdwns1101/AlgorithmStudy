@@ -49,7 +49,7 @@ int main()
 
 		DP[i] = minNum + 1; // DP에 +1
 	}
-
+	 
 	cout << DP[n] << endl;
 
 	return 0;
