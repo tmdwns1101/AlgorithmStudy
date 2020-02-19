@@ -28,8 +28,6 @@ int main()
 	int DP[50010];
 	vector<int> v;
 
-	memset(DP, 0, sizeof(DP));
-
 	cin >> n;
 
 	DP[0] = 0;
