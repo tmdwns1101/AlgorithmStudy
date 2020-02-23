@@ -16,66 +16,50 @@ N과 K는 정수이다.
 출력
 수빈이가 동생을 찾는 가장 빠른 시간을 출력한다.
 */
-
+/*
+n에서 k로 가는 가장 빠른 길 찾기 -> BFS
+*/
 #include <iostream>
-#include <math.h> // pow
+#include <queue>
 using namespace std;
 
 int n, k;
-int ans(0);
+bool visited[100001];
+
+int BFS(int n, int k) {
+	queue<int> q;
+	int time = 0;
+
+	q.push(n);
+
+	while (true) {
+		int size = q.size();
+
+		for (int i = 0; i < size; i++) {
+			n = q.front();
+			q.pop();
+			if (n == k) {
+				return time;
+			}
+			if (n > 0 && !visited[n - 1]) {
+				q.push(n - 1);
+				visited[n - 1] = true;
+			}
+			if (n < 100000 && !visited[n + 1]) {
+				q.push(n + 1);
+				visited[n + 1] = true;
+			}
+			if (n * 2 <= 100000 && !visited[n * 2]) { 
+				q.push(n * 2);
+				visited[n * 2] = true;
+			}
+		}
+		time++;
+	}
+}
 
 int main()
 {
 	cin >> n >> k;
-
-	if (n >= k) {
-		ans = n - k;
-		cout << ans;
-		return 0;
-	}
-
-	int temp = k;
-	int cnt = 0; // 나누기를 한 횟수
-
-	// k를 저장한 temp가 n보다 작아질 때 까지 /2
-	while (!(temp <= n)) {
-		temp /= 2;
-		cnt++;
-
-		cout << "temp(1) : " << temp << endl;
-		cout << "cnt : " << cnt << endl;
-	}
-
-	if ((n - temp) <= ((temp * 2) - n)) { // n이 temp*2 보다 temp에 더 가깝다면
-		cout << "n-temp" << endl;
-
-		ans += (n - temp);
-		cout << "ans(1) : " << ans << endl;
-
-		ans += cnt;
-		cout << "ans(2) : " << ans << endl;
-
-		temp *= pow(2, cnt);
-		cout << "temp(2) : " << temp << endl;
-
-		ans += (k - temp);
-	}
-	else {
-		cout << "temp*2 - n" << endl;
-
-		ans += ((temp * 2) - n);
-		cout << "ans(1) : " << ans << endl;
-
-		temp *= pow(2, cnt);
-		cout << "temp(2) : " << temp << endl;
-
-		cnt--;
-		cout << "cnt : " << cnt << endl;
-
-		ans += cnt;
-		cout << "ans(2) : " << ans << endl;
-
-		ans += (k - temp);
-	}
-	cout << ans;
+	cout << BFS(n, k);
 }
