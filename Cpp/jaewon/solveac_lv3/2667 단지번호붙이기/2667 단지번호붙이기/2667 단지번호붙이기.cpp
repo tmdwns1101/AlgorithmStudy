@@ -36,8 +36,8 @@ void dfs(int x, int y) {
 		int nx = x + dx[i];
 		int ny = y + dy[i];
 
-		if (nx >= 0 || ny >= 0 || nx < n || ny < n) { // nx, ny는 0이상 n미만
-			if (!visited[nx][ny] && (node[nx][ny] == '1')) { // 방문 안했고 값이 1이면
+		if (nx >= 0 && ny >= 0 && nx < n && ny < n) { // nx, ny는 0이상 n미만
+			if (!visited[nx][ny] && node[nx][ny]) { // 방문 안했고 값이 1이면
 				dfs(nx, ny);
 			}
 		}
@@ -49,12 +49,12 @@ int main()
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++)
-			scanf_s("%1d", &node[i][j]);
+			scanf_s(" %1d", &node[i][j]);
 	}
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
-			if (node[i][j] == '1' && !visited[i][j]) {
+			if (node[i][j] && !visited[i][j]) {
 				dfs(i, j);
 				cnt++;
 			}
