@@ -8,7 +8,6 @@ dx = [0,0,-1,1]
 dy = [-1,1,0,0]
 
 
-
 def dfs(x,y,n,percentage):
     if n == 0:
         return percentage 

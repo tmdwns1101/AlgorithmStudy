@@ -1,7 +1,3 @@
-
-
-
-
 def solution(gears, commands):
     
     for command in commands:
